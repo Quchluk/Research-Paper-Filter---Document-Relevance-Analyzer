@@ -171,8 +171,6 @@ Data extractor/                    # Root directory
     ├── QUICKSTART.md              # Quick start guide
     ├── WORKFLOW.md                # Workflow documentation
     ├── SECURITY_CHECKLIST.md      # Security best practices
-    ├── PUSH_INSTRUCTIONS.md       # Git push instructions
-    ├── complete_push.sh           # Automated push script
     ├── db/                        # OCR text files for analysis
     │   ├── *_ocr.txt              # Extracted text files
     │   └── *.pdf                  # Original PDF documents
