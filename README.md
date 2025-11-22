@@ -34,13 +34,16 @@ The system operates in two main stages:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd "Data extractor/OCR master"
+git clone git@github.com:Quchluk/Research-Paper-Filter---Document-Relevance-Analyzer.git
+cd "Research-Paper-Filter---Document-Relevance-Analyzer"
 ```
 
 ### 2. Install Python Dependencies
 
+Navigate to the OCR master directory and install requirements:
+
 ```bash
+cd "OCR master"
 pip install -r requirements.txt
 ```
 
@@ -90,9 +93,10 @@ OPENROUTER_API_KEY=your_openrouter_api_key_here
 
 ### Step 1: OCR Processing
 
-Place your PDF documents in the `OCR input output/` directory, then run:
+Place your PDF documents in the `OCR master/OCR input output/` directory, then run:
 
 ```bash
+cd "OCR master"
 python ocr_vision.py
 ```
 
@@ -103,7 +107,7 @@ This will:
 
 ### Step 2: Customize Filtering Criteria
 
-Edit the `prompt.py` file to define your research criteria:
+Edit the `OCR master/prompt.py` file to define your research criteria:
 
 ```python
 USER_PROMPT_TEMPLATE = """Analyze if this document matches the following criteria:
@@ -123,9 +127,10 @@ Document:
 
 ### Step 3: Run Relevance Analysis
 
-Move the OCR text files to the `db/` directory, then run:
+Move the OCR text files to the `OCR master/db/` directory, then run:
 
 ```bash
+cd "OCR master"
 python document_filter.py
 ```
 
@@ -148,18 +153,32 @@ document3_ocr.txt,1
 ## Project Structure
 
 ```
-OCR master/
-├── ocr_vision.py              # OCR processing script
-├── document_filter.py         # LLM-based relevance filtering
-├── prompt.py                  # Customizable filtering prompts
-├── test_api.py               # API connection testing utility
-├── requirements.txt           # Python dependencies
-├── .env                      # Environment variables (not in repo)
-├── .gitignore               # Git ignore rules
-├── db/                       # OCR text files for analysis
-├── OCR input output/         # PDF input and OCR output
-├── poppler/                  # Poppler binaries (not in repo)
-└── relevance_results.csv     # Analysis results output
+Data extractor/                    # Root directory
+├── README.md                      # This file
+├── .gitignore                     # Git ignore rules
+├── .gitattributes                 # Git attributes
+├── relevance_results.csv          # Top-level results (optional)
+└── OCR master/                    # Main application directory
+    ├── ocr_vision.py              # OCR processing script
+    ├── document_filter.py         # LLM-based relevance filtering
+    ├── prompt.py                  # Customizable filtering prompts
+    ├── test_api.py                # API connection testing utility
+    ├── requirements.txt           # Python dependencies
+    ├── .env                       # Environment variables (not in repo)
+    ├── .gitignore                 # Additional ignore rules
+    ├── LICENSE                    # MIT License
+    ├── CONTRIBUTING.md            # Contribution guidelines
+    ├── QUICKSTART.md              # Quick start guide
+    ├── WORKFLOW.md                # Workflow documentation
+    ├── SECURITY_CHECKLIST.md      # Security best practices
+    ├── PUSH_INSTRUCTIONS.md       # Git push instructions
+    ├── complete_push.sh           # Automated push script
+    ├── db/                        # OCR text files for analysis
+    │   ├── *_ocr.txt              # Extracted text files
+    │   └── *.pdf                  # Original PDF documents
+    ├── OCR input output/          # PDF input and OCR output
+    ├── poppler/                   # Poppler binaries (not in repo)
+    └── relevance_results.csv      # Analysis results output
 ```
 
 ## Customization Guide
@@ -245,6 +264,7 @@ To minimize costs:
 Test your API connections before processing large batches:
 
 ```bash
+cd "OCR master"
 python test_api.py
 ```
 
