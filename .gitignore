@@ -1,0 +1,113 @@
+# Environment variables - SENSITIVE DATA
+poppler.zip
+poppler/
+# Poppler binaries (platform-specific, should be downloaded separately)
+
+*.lnk
+$RECYCLE.BIN/
+Desktop.ini
+ehthumbs.db
+Thumbs.db
+# Windows
+
+.apdisk
+Temporary Items
+Network Trash Folder
+.AppleDesktop
+.AppleDB
+.com.apple.timemachine.donotpresent
+.VolumeIcon.icns
+.Trashes
+.TemporaryItems
+.Spotlight-V100
+.fseventsd
+.DocumentRevisions-V100
+._*
+Icon
+.LSOverride
+.AppleDouble
+.DS_Store
+# macOS
+
+*.rar
+*.tar.gz
+*.zip
+# Compressed archives
+
+relevance_results.csv
+# CSV results (if they contain sensitive data)
+
+*_ocr.txt
+# OCR output text files (can be regenerated)
+
+*.pdf
+# PDF files (large binaries)
+
+*.db
+*.sqlite
+# Database
+
+logs/
+*.log
+# Logs
+
+*.iml
+.DS_Store
+*~
+*.swo
+*.swp
+.idea/
+.vscode/
+# IDE
+
+venv.bak/
+env.bak/
+.venv
+env/
+ENV/
+venv/
+.hypothesis/
+.tox/
+htmlcov/
+.coverage
+.pytest_cache/
+pip-delete-this-directory.txt
+pip-log.txt
+*.spec
+*.manifest
+MANIFEST
+*.egg
+.installed.cfg
+*.egg-info/
+share/python-wheels/
+pip-wheel-metadata/
+wheels/
+var/
+sdist/
+parts/
+lib64/
+lib/
+.eggs/
+eggs/
+downloads/
+dist/
+develop-eggs/
+build/
+.Python
+*.so
+*$py.class
+*.py[cod]
+__pycache__/
+# Python
+
+!tsconfig.json
+!package-lock.json
+!package.json
+*.json
+# Google Cloud credentials - SENSITIVE DATA
+
+*.env
+.env.*.local
+.env.local
+.env
+
